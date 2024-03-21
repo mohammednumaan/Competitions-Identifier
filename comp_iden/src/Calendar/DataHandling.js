@@ -1,14 +1,8 @@
-// NOTE : THIS IS A SEPERATE MODULE FOR HANDLING DB REQUESTS, YOU CAN CHANGE IT OR PLACE THE LOGIC IN ANOHTER PLACE IF YOU LIKE
-// importS
-import events from "/src/sampleEvents.json";
-
-// fetching data from database in json format
-// the fetched data must be an array of objects
-
+// fetching collection of objects from local host 8000 
+// (this port contains the parsed csv data)
 const fetchEvents = async (callback) => {
-  // await and fetching data code goes here, along with error handling (to check if response is 'ok')
-  const data = events;
-  callback(data);
+  const allEventsJSON = await fetch("http://localhost:8080/eventsData");
+  return allEventsJSON.json();
 };
 
 export default fetchEvents;

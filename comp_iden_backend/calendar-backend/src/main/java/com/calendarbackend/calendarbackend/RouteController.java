@@ -8,9 +8,8 @@ import org.springframework.web.bind.annotation.*;
 import java.text.ParseException;
 import java.util.List;
 
-// this is just for testing purposes (you can ignore this)!
-// a simple class to send json data over the network
-// to check if the Excel data is parsed properly
+// sends a json response at the endpoint
+// with the parsed data (events)
 @RestController
 public class RouteController {
     @GetMapping("/eventsData")
